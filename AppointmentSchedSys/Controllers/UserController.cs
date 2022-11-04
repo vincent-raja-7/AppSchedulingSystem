@@ -51,10 +51,20 @@ namespace AppointmentSchedSys.Controllers
         }
         [Authorize]
         [HttpGet]
-        [Route("authenticate")]
-        public ActionResult Test()
+        [Route("GetUserId")]
+        public ActionResult GetUserID (String username)
         {
-            return Ok("Authenticated User");
+            User u = _repo.Get(username);
+            return Ok(u.Id);
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("GetUserDetails")]
+        public ActionResult GetUserDetails(String username)
+        {
+            User u = _repo.Get(username);
+            return Ok(u);
         }
 
         [Authorize]
