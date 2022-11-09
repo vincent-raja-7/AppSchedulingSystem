@@ -58,7 +58,7 @@ namespace AppointmentSchedSys.Services
                 try
                 {
                     e.Notification = item.Notification;
-                    e.Note = item.Notification;
+                    e.Note = item.Note;
                     e.Status = item.Status;
                     e.Rescheduled_Date = item.Rescheduled_Date;
                     e.Rescheduled_Slot = item.Rescheduled_Slot;

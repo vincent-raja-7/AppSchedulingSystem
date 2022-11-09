@@ -49,12 +49,14 @@ namespace AppointmentSchedSys.Controllers
                 return Ok(result);
             return BadRequest("Could not register user");
         }
-        [Authorize]
+
         [HttpGet]
         [Route("GetUserId")]
         public ActionResult GetUserID (String username)
         {
             User u = _repo.Get(username);
+            if (u == null)
+                return Ok(u);
             return Ok(u.Id);
         }
 
